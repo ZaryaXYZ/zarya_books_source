@@ -2,3 +2,7 @@ title: 'Диалектическая логика'
 author:
 - Эвальд Васильевич Ильенков
 lang: ru-RU
+mainfont: 'Times New Roman'
+geometry:
+- a4paper
+- margin=2cm

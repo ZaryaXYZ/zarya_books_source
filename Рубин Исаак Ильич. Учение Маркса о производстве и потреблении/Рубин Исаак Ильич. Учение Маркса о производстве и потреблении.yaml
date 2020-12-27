@@ -2,3 +2,7 @@ title: 'Учение Маркса о производстве и потребл�
 author:
 - Исаак Ильич Рубин
 lang: ru-RU
+mainfont: 'Times New Roman'
+geometry:
+- a4paper
+- margin=2cm
