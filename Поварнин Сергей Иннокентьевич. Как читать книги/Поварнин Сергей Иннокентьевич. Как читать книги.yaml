@@ -2,3 +2,7 @@ title: 'Как читать книги'
 author:
 - Сергей Иннокентьевич Поварнин
 lang: ru-RU
+mainfont: 'Times New Roman'
+geometry:
+- a4paper
+- margin=2cm

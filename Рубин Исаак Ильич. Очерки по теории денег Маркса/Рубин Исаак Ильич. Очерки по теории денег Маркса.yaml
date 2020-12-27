@@ -2,3 +2,7 @@ title: 'Очерки по теории денег Маркса'
 author:
 - Исаак Ильич Рубин
 lang: ru-RU
+mainfont: 'Times New Roman'
+geometry:
+- a4paper
+- margin=2cm
