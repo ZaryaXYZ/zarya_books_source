@@ -228,16 +228,16 @@ $$
 
 #### Пробелы
 
-Для добавления пробелов между словами в формулах используйте `\enspace`:
+Для добавления пробелов между словами в формулах используйте `\medspace`:
 
 ```
 $$
-\frac{стоимость \enspace продукта \enspace А}{стоимость \enspace продукта \enspace Б} = \frac{стоимость \enspace 4 \enspace часов \enspace труда}{стоимость \enspace 2 \enspace часов \enspace труда}
+\frac{стоимость \medspace продукта \medspace А}{стоимость \medspace продукта \medspace Б} = \frac{стоимость \medspace 4 \medspace часов \medspace труда}{стоимость \medspace 2 \medspace часов \medspace труда}
 $$
 ```
 
 $$
-\frac{стоимость \enspace продукта \enspace А}{стоимость \enspace продукта \enspace Б} = \frac{стоимость \enspace 4 \enspace часов \enspace труда}{стоимость \enspace 2 \enspace часов \enspace труда}
+\frac{стоимость \medspace продукта \medspace А}{стоимость \medspace продукта \medspace Б} = \frac{стоимость \medspace 4 \medspace часов \medspace труда}{стоимость \medspace 2 \medspace часов \medspace труда}
 $$
 
 #### Информация по LaTeX
