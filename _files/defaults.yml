@@ -1,0 +1,24 @@
+from: markdown
+to: pdf
+
+output-file:
+input-files:
+
+template: latex-template.tex
+standalone: true
+
+pdf-engine: xelatex
+
+variables:
+    documentclass: memoir
+    mainfont: PT Serif
+    sansfont: PT Sans
+    monofont: PT Mono
+    lang: ru-RU
+    indent: true
+    graphics: true
+    numbersections: false
+    papersize: a4
+    classoption:
+        - oneside
+    
