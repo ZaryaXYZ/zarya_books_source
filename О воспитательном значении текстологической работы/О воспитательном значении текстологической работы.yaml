@@ -1,9 +1,9 @@
 title: 'Речи к представителям самообразовательных теоретических сообществ о воспитательном значении текстологической работы'
 author: 
-- 'Dominik Jaroszkiewicz'
-- 'Mikołaj Zagorski'
+  - Dominik Jaroszkiewicz
+  - Mikołaj Zagorski
 lang: ru-RU
 mainfont: 'Times New Roman'
 geometry:
-- a4paper
-- margin=2cm
+  - a4paper
+  - margin=2cm

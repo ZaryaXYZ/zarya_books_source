@@ -1,9 +1,9 @@
 title: 'Современные экономисты на Западе'
 author:
-- Исаак Ильич Рубин
+  - Исаак Ильич Рубин
 cover-image: 'Рубин Исаак Ильич. Современные экономисты на Западе.jpg'
 lang: ru-RU
 mainfont: 'Times New Roman'
 geometry:
-- a4paper
-- margin=2cm
+  - a4paper
+  - margin=2cm

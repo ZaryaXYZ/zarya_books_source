@@ -1,9 +1,9 @@
 title: 'Теория отражения и современная наука о мозге'
 author:
-- Пётр Кузьмич Анохин
+  - Пётр Кузьмич Анохин
 cover-image: 'Анохин Пётр Кузьмич. Теория отражения и современная наука о мозге.jpg'
 lang: ru-RU
 mainfont: 'Times New Roman'
 geometry:
-- a4paper
-- margin=2cm
+  - a4paper
+  - margin=2cm

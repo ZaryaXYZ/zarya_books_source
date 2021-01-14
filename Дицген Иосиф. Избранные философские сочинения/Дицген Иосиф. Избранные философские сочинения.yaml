@@ -1,9 +1,9 @@
 title: 'Избранные философские сочинения'
 author:
-- Иосиф Дицген
-cover-image: 'Дицген Иосиф. Избранные философские сочинения.jpg'
+  - Иосиф Дицген
+cover-image: 'Дицген Иосиф. Избранные философские сочинения.jpg
 lang: ru-RU
 mainfont: 'Times New Roman'
 geometry:
-- a4paper
-- margin=2cm
+  - a4paper
+  - margin=2cm
