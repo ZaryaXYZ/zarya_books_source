@@ -1,10 +1,6 @@
 from: markdown
 to: pdf
 
-output-file:
-input-files:
-
-template: latex-template.tex
 standalone: true
 
 pdf-engine: xelatex
