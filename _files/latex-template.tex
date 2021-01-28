@@ -39,31 +39,151 @@ $endif$
 $endif$
 
 
-\defaultfontfeatures{Scale=MatchLowercase}
-\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
-$if(mainfont)$
-\setmainfont[$for(mainfontoptions)$$mainfontoptions$$sep$,$endfor$]{$mainfont$}
-$endif$
-$if(sansfont)$
-\setsansfont[$for(sansfontoptions)$$sansfontoptions$$sep$,$endfor$]{$sansfont$}
-$endif$
-$if(monofont)$
-\setmonofont[$for(monofontoptions)$$monofontoptions$$sep$,$endfor$]{$monofont$}
-$endif$
-$for(fontfamilies)$
-\newfontfamily{$fontfamilies.name$}[$for(fontfamilies.options)$$fontfamilies.options$$sep$,$endfor$]{$fontfamilies.font$}
-$endfor$
-$if(mathfont)$
-$if(mathspec)$
-\ifxetex
-\setmathfont(Digits,Latin,Greek)[$for(mathfontoptions)$$mathfontoptions$$sep$,$endfor$]{$mathfont$}
-\else
-\setmathfont[$for(mathfontoptions)$$mathfontoptions$$sep$,$endfor$]{$mathfont$}
-\fi
-$else$
-\setmathfont[$for(mathfontoptions)$$mathfontoptions$$sep$,$endfor$]{$mathfont$}
-$endif$
-$endif$
+%\defaultfontfeatures{Scale=MatchLowercase}
+%\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+%$if(mainfont)$
+%\setmainfont[$for(mainfontoptions)$$mainfontoptions$$sep$,$endfor$]{$mainfont$}
+%$endif$
+%$if(sansfont)$
+%\setsansfont[$for(sansfontoptions)$$sansfontoptions$$sep$,$endfor$]{$sansfont$}
+%$endif$
+%$if(monofont)$
+%\setmonofont[$for(monofontoptions)$$monofontoptions$$sep$,$endfor$]{$monofont$}
+%$endif$
+%$for(fontfamilies)$
+%\newfontfamily{$fontfamilies.name$}[$for(fontfamilies.options)$$fontfamilies.options$$sep$,$endfor$]{$fontfamilies.font$}
+%$endfor$
+%$if(mathfont)$
+%$if(mathspec)$
+%\ifxetex
+%\setmathfont(Digits,Latin,Greek)[$for(mathfontoptions)$$mathfontoptions$$sep$,$endfor$]{$mathfont$}
+%\else
+%\setmathfont[$for(mathfontoptions)$$mathfontoptions$$sep$,$endfor$]{$mathfont$}
+%\fi
+%$else$
+%\setmathfont[$for(mathfontoptions)$$mathfontoptions$$sep$,$endfor$]{$mathfont$}
+%$endif$
+%$endif$
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}
+\usepackage{mathrsfs}
+
+
+\defaultfontfeatures{ 
+  Path=../_files/fonts/,
+  Scale=MatchLowercase,
+  Extension=.otf,
+}
+
+% 
+% Text fonts
+%
+\setmainfont{Alegreya}[
+  ItalicFont=*-Italic,
+  BoldFont=*-Bold,
+  BoldItalicFont=*-BoldItalic,
+  SlantedFont=Alegreya,
+  SlantedFeatures={FakeSlant=0.13},
+  Scale=0.93925,
+]
+
+\setsansfont{AlegreyaSans}[
+  UprightFont=*-Regular,
+  ItalicFont=*-Italic,
+  BoldFont=*-Bold,
+  BoldItalicFont=*-BoldItalic,
+]
+
+\newfontfamily{\scmain}{AlegreyaSC}[
+  UprightFont=*-Regular,
+  BoldFont=*-Bold,
+  LetterSpace=10,
+  WordSpace=2.5,
+]
+
+\newfontfamily{\scsans}{AlegreyaSansSC}[
+  UprightFont=*-Regular,
+  BoldFont=*-Bold,
+  LetterSpace=10,
+  WordSpace=3,
+]
+
+\newfontfamily{\letterspacefont}{AlegreyaSans}[
+  UprightFont=*-ExtraBold,
+  BoldFont=*-Black,
+  LetterSpace=15,
+  WordSpace=4
+]
+
+\newfontfamily{\tablefont}{AlegreyaSans}[
+  UprightFont=*-Regular,
+  ItalicFont=*-Italic,
+  BoldFont=*-Bold,
+  BoldItalicFont=*-BoldItalic,
+  Numbers={Monospaced,Lining}
+]
+
+\newfontfamily{\greekfont}{Alegreya}[
+  Script=Latin,
+]
+
+% 
+% Math fonts
+%
+\defaultfontfeatures{ 
+  Path=../_files/fonts/,
+  Scale=MatchLowercase,
+  Extension=.otf,
+}
+
+\usepackage{unicode-math}
+
+\setmathfont{STIX2Math}[% operators
+  StylisticSet=01 ,
+  Scale=MatchLowercase,
+]
+
+\setmathfont{Alegreya.otf}[% numbers
+  range={up},
+  Script=Latin,
+  script-features={},
+  sscript-features={}
+]
+
+\setmathfont{Alegreya-Italic.otf}[% italic letters
+  range={it},
+  Script=Latin,
+  script-features={},
+  sscript-features={}
+]
+
+%% Alllow cyrilic letters in math
+\DeclareSymbolFont{cyrletters}{\encodingdefault}{\familydefault}{m}{it}
+%% All letters
+\newcommand{\makecyrmathletter}[1]{%
+  \begingroup\lccode`a=#1\lowercase{\endgroup
+  \Umathcode`a}="0 \csname symcyrletters\endcsname\space #1
+}
+\count255="409
+\loop\ifnum\count255<"44F
+  \advance\count255 by 1
+  \makecyrmathletter{\count255}
+\repeat
+
+%% Fake slant fot г, д, п, т
+
+\DeclareSymbolFont{cyrletterssl}{\encodingdefault}{\familydefault}{m}{sl}
+\newcommand{\makecyrmathlettersl}[1]{%
+  \begingroup\lccode`a=#1\lowercase{\endgroup
+  \Umathcode`a}="0 \csname symcyrletterssl\endcsname\space #1
+}
+\makecyrmathlettersl{"433} % г
+\makecyrmathlettersl{"434} % д
+\makecyrmathlettersl{"43F} % п
+\makecyrmathlettersl{"442} % т
+
+
+
 \IfFileExists{microtype.sty}{% use microtype if available
 	\usepackage[$for(microtypeoptions)$$microtypeoptions$$sep$,$endfor$]{microtype}
 	\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
@@ -108,12 +228,26 @@ $endif$
 
 \usepackage{graphicx}
 \usepackage{mathtext}
+\usepackage{longtable,booktabs}
+\usepackage{calc}
 
+\sloppy
+
+$if(title)$
+\title{$title$}
+$endif$
+\author{$if(author)$
+$for(author)$
+$author$$sep$,
+$endfor$
+$endif$}
+\date{}
 
 \begin{document}
     $if(cover-image)$
     \thispagestyle{empty}
     {\centering\includegraphics[width=\textwidth]{$cover-image$}}
     $endif$
+    \maketitle
 	$body$	
 \end{document}
